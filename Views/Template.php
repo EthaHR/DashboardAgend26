@@ -7,6 +7,8 @@
   <title>Gestión de Inventarios</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
   <link rel="stylesheet" href="Views/Resources/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="Views/Resources/bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -25,6 +27,9 @@
   <link href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.bootstrap.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans Pro:300,400,600,700,300italic,400italic,600italic">
+
+
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -76,6 +81,7 @@
   <script src="Views/Resources/fastclick/lib/fastclick.js"></script>
   <script src="Views/Resources/dist/js/adminlte.min.js"></script>
 
+
   <script src="https://cdn.datatables.net/2.3.8/js/dataTables.js"></script>
   <script src="https://cdn.datatables.net/2.3.8/js/dataTables.bootstrap.js"></script>
   <script src="https://cdn.datatables.net/responsive/3.0.3/js/dataTables.responsive.js"></script>
@@ -91,6 +97,12 @@
 
   <script src="Views/Resources/dist/js/pages/dashboard.js"></script>
   <script src="Views/Resources/dist/js/demo.js"></script>
+
+
+
+
+
+
 
 </body>
 

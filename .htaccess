@@ -1,6 +1,15 @@
 #BEGIN WordPress
 
 RewriteEngine On
+
+# EXCEPCIÓN: Si piden el favicon.ico, no apliques la reescritura de páginas de PHP
+RewriteCond %{REQUEST_URI} !^/favicon\.ico [NC]
+
+# Condiciones existentes (que sea un archivo o directorio real)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# Tu regla de enrutamiento limpia
 RewriteRule ^([-a-zA-Z0-9/]+)$ index.php?Pages=$1
+
+#END WordPress

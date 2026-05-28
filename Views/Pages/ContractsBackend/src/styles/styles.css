@@ -80,19 +80,25 @@ form .form-label {
 form .form-control {
     width: 100%;
     padding: 0.6rem 0.75rem;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: #1f2937;
     background-color: #f9fafb;
     border: 1px solid #d1d5db;
     border-radius: 6px;
-    outline: none;
+    outline-color: #99999900;
     transition: all 0.2s ease-in-out;
+
+}
+
+form .form-control:hover {
+        scale: 1.06;
+        box-shadow: 0 0 0 3px rgba(54, 224, 224, 0.46);
 }
 
 form .form-control:focus {
     background-color: #ffffff;
-    border-color: #3078ed;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    outline: 1px solid #3078ed;
+    box-shadow: 0 0 1px 4px rgba(59, 130, 246, 0.15);
 }
 
 form .btn-primary {
@@ -115,6 +121,7 @@ form .btn-primary:hover {
     background-color: #1d4ed8;
     transform: scale(1.04);
     box-shadow: 0 4px 12px rgba(37, 99, 219, 0.2);
+
 }
 
 form .btn-primary:active {
@@ -280,31 +287,31 @@ form .btn-primary:active {
 
 
 /* Estilo para advertencia */
-.alert-warning {
+.alert-warning-msg {
   background-color: #fff3cd;   /* Amarillo suave */
   color: #856404;              /* Texto marrón oscuro */
   border: 1px solid #ffeeba;   /* Borde amarillo */
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 16px;
   font-weight: 500;
 }
 /* Estilo para error */
-.alert-danger {
+.alert-danger-msg {
   background-color: #f8d7da;   /* Rojo claro */
   color: #721c24;              /* Texto rojo oscuro */
   border: 1px solid #f5c6cb;   /* Borde rojo */
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 16px;
   font-weight: 500;
 }
 
 /* Estilo para éxito */
-.alert-success {
+.alert-success-msg {
   background-color: #d4edda;   /* Verde claro */
   color: #155724;              /* Texto verde oscuro */
   border: 1px solid #c3e6cb;   /* Borde verde */
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 16px;
   font-weight: 500;
 }
 
