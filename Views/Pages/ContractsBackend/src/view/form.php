@@ -1,11 +1,8 @@
 <?php
 mysqli_report(MYSQLI_REPORT_OFF);
 
-// Inclusión segura del modelo de conexión usando la ruta absoluta del archivo actual
-include __DIR__ . "/../model/conexion.php";
-
-if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
-    $conexion = include __DIR__ . "/../model/conexion.php";
+if (!isset($conexion)) {
+    include_once dirname(__DIR__, 5) . "/Model/Model.php";
 }
 ?>
 
