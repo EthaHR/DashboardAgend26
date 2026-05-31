@@ -9,11 +9,11 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
 }
 ?>
 
-<link rel="stylesheet" href="Views/Pages/CompaniesBackend/src/styles/styles.css">
+<link rel="stylesheet" href="Views/Pages/OperatorsBackend/src/styles/styles.css">
 
 
 <section class="content-header">
-    <h1>SISTEMA DE GESTIÓN DE EMPRESAS</h1>
+    <h1>SISTEMA DE GESTIÓN DE OPERADORES</h1>
 </section>
 
 <section class="content">
@@ -22,7 +22,7 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
         <div class="col-12" style="max-width: 950px; margin: auto; padding: 0px">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Registro de Empresa</h3>
+                    <h3 class="box-title">Registro de Operador</h3>
                 </div>
                 <form method="post" role="form" style="padding: 0;">
                     <div class="box-body">
@@ -34,37 +34,30 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
                             session_start();
                         }
                         if (isset($_SESSION['alerta_edicion'])) {
-                            echo "<div class='alert alert-success'>Empresa actualizada</div>";
+                            echo "<div class='alert alert-success'>Operador actualizado</div>";
                             unset($_SESSION['alerta_edicion']);
                         }
                         if (isset($_SESSION['alerta_eliminacion'])) {
-                            echo "<div class='alert alert-success'>Empresa eliminada</div>";
+                            echo "<div class='alert alert-success'>Operador eliminado</div>";
                             unset($_SESSION['alerta_eliminacion']);
                         }
                         ?>
 
                         <div class="grid-form">
                             <div class="form-group">
-                                <label>Nombre de la Empresa:</label>
-                                <input type="text" class="form-control" name="nombre_empresa" value="<?= isset($_POST['nombre_empresa']) ? htmlspecialchars($_POST['nombre_empresa']) : '' ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Dirección:</label>
-                                <input type="text" class="form-control" name="direccion" value="<?= isset($_POST['direccion']) ? htmlspecialchars($_POST['direccion']) : '' ?>" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Teléfono:</label>
-                                <input type="text" class="form-control" name="telefono" value="<?= isset($_POST['telefono']) ? htmlspecialchars($_POST['telefono']) : '' ?>" required>
+                                <label>Nombre del Operador:</label>
+                                <input type="text" class="form-control" name="nombre_operador" value="<?= isset($_POST['nombre_operador']) ? htmlspecialchars($_POST['nombre_operador']) : '' ?>" required>
                             </div>
                         </div>
                     </div>
 
                     <div class="box-footer" style="width: 50%;min-width: 320px; margin: auto;">
-                        <button type="submit" class="btn btn-primary" id="btnRegistrar" style="width: 100%" name="btnregistrar" value="ok">Registrar Empresa</button>
+                        <button type="submit" class="btn btn-primary" id="btnRegistrar" style="width: 100%" name="btnregistrar" value="ok">Registrar Operador</button>
                     </div>
                 </form>
             </div>
         </div>
+
 
 
 
@@ -87,7 +80,7 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
         // Función interna con nombre para poder remover el listener limpiamente
         function handler() {
             if (modal.returnValue === 'confirm') {
-                window.location.href = "index.php?Pages=CompaniesBackend&id=" + id;
+                window.location.href = "index.php?Pages=OperatorsBackend&id=" + id;
             }
             modal.removeEventListener('close', handler);
         }
@@ -97,11 +90,11 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
 
     // Inicialización limpia aprovechando el jQuery global que ya cargó Template.php
     $(document).ready(function() {
-        if ($.fn.DataTable.isDataTable('#tablaEmpresas')) {
-            $('#tablaEmpresas').DataTable().destroy();
+        if ($.fn.DataTable.isDataTable('#tablaOperadores')) {
+            $('#tablaOperadores').DataTable().destroy();
         }
 
-        $('#tablaEmpresas').DataTable({
+        $('#tablaOperadores').DataTable({
             responsive: true,
             dom: 'Bfrtip',
             language: {

@@ -1,0 +1,215 @@
+/* ==========================================================================
+   ESTILOS PARA PÁGINA DE ERROR DE CONEXIÓN (error.css)
+   ========================================================================== */
+
+/* Reset básico para asegurar consistencia en la impresión y renderizado */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cuerpo de la página: Fondo oscuro y limpio */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #1a1a1e; /* Gris carbón profundo */
+    color: #e2e2e6;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contenedor principal del error */
+.error-container {
+    max-width: 500px;
+    padding: 40px 30px;
+    background-color: #222227; /* Un gris ligeramente más claro para hacer contraste */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 5px solid #dc3545; /* Línea de acento roja Bootstrap de peligro arriba */
+
+    /* Animación sutil de entrada */
+    animation: sutilAparecer 0.4s ease-out forwards;
+}
+
+/* Icono de escudo de advertencia construido con CSS puro (haciendo match con tu favicon) */
+.error-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px auto;
+    background-color: rgba(220, 53, 69, 0.1); /* Fondo rojo ultra suave */
+    color: #dc3545; /* Rojo carmesí */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    border: 2px solid rgba(220, 53, 69, 0.2);
+}
+
+/* Título de Error */
+h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ff4d5e; /* Rojo claro para destacar sobre el fondo oscuro */
+    margin-bottom: 16px;
+}
+
+/* Mensaje técnico descriptivo */
+p {
+    font-size: 1rem;
+    color: #b0b0b8; /* Gris suave para que sea fácil de leer */
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* Botón de acción por si el usuario quiere reintentar o volver al formulario */
+.btn-reintentar {
+    display: inline-block;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-reintentar:hover {
+    background-color: #bb2d3b; /* Rojo más oscuro al pasar el mouse */
+}
+
+.btn-reintentar:active {
+    transform: scale(0.98); /* Pequeño feedback al presionar */
+}
+
+/* Código de error de sistema oculto para soporte técnico */
+.error-code {
+    margin-top: 20px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.8rem;
+    color: #5c5c64;
+}
+
+/* Animación sutil */
+@keyframes sutilAparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Estilos de Uiverse.io */
+/* From Uiverse.io by Cksunandh */
+.tv-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tv-screen {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: black;
+  border: 10px solid #333;
+  border-radius: 10px;
+  box-shadow:
+    0 0 20px rgba(0, 0, 0, 0.8),
+    inset 0 0 50px rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.static {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    #000,
+    #000 1px,
+    #111 1px,
+    #fff 1px,
+    #333 2px
+  );
+  animation: flicker 0.1s steps(20) infinite;
+  z-index: 1;
+}
+
+.error-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 1.6em;
+  font-weight: bolder;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 5px black;
+  z-index: 2;
+  animation: glitch 0.5s infinite;
+}
+
+.tv-stand {
+  width: 150px;
+  height: 10px;
+  background: #333;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.8;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.01);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scaleY(0.99);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(-50%, -50%) skewX(5deg);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translate(-50%, -50%) skewX(-5deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) skewX(0deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-50%, -50%) skewX(-5deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) skewX(5deg);
+    opacity: 0.9;
+  }
+}

@@ -1,8 +1,11 @@
 <?php
 mysqli_report(MYSQLI_REPORT_OFF);
 
-if (!isset($conexion)) {
-    include_once dirname(__DIR__, 5) . "/Model/Model.php";
+// Inclusión segura del modelo de conexión usando la ruta absoluta del archivo actual
+include __DIR__ . "/../model/conexion.php";
+
+if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
+    $conexion = include __DIR__ . "/../model/conexion.php";
 }
 ?>
 
@@ -16,12 +19,12 @@ if (!isset($conexion)) {
 <section class="content">
     <div class="row">
 
-        <div class="col-4 w-100 w-md-50" style="max-width: 950px; margin: auto;padding: 40px">
+        <div class="col-12" style="max-width: 950px; margin: auto; padding: 0px">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">Registro de Contrato</h3>
                 </div>
-                <form method="post" role="form" style="padding: 5px 30px;">
+                <form method="post" role="form" style="padding: 0;">
                     <div class="box-body">
                         <?php
                         include __DIR__ . "/../controllers/guardar.php";
@@ -68,8 +71,8 @@ if (!isset($conexion)) {
                         </div>
                     </div>
 
-                    <div class="box-footer" style="width: 50%;min-width: 320px; margin: auto;">
-                        <button type="submit" class="btn btn-primary" id="btnRegistrar" style="width: 100%" name="btnregistrar" value="ok">Registrar Contrato</button>
+                    <div class="box-footer" style="width: 100%;text-align: center;">
+                        <button type="submit" class="btn btn-primary" id="btnRegistrar" style="width: 50%;min-width: 320px;">Registrar Contrato</button>
                     </div>
                 </form>
             </div>
