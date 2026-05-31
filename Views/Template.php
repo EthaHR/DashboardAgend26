@@ -44,11 +44,11 @@
         if (
           $_GET["Pages"] == "Operator" ||
           $_GET["Pages"] == "Companies" ||
-          $_GET["Pages"] == "Contracts" ||
+          $_GET["Pages"] == "Contacts" ||
           $_GET["Pages"] == "Groups" ||
           $_GET["Pages"] == "ListOperators" ||
           $_GET["Pages"] == "ListCompanies" ||
-          $_GET["Pages"] == "ListContracts" ||
+          $_GET["Pages"] == "ListContacts" ||
           $_GET["Pages"] == "ListGroups"
         ) {
           include "Pages/" . $_GET["Pages"] . ".php";

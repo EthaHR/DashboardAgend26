@@ -49,7 +49,7 @@
                 <ul class="treeview-menu">
                     <li><a href="Operator"><i class="fa fa-user-plus text-aqua"></i> Operador</a></li>
                     <li><a href="Companies"><i class="fa fa-plus-square text-green"></i> Empresa</a></li>
-                    <li><a href="Contracts"><i class="fa fa-file-text text-orange"></i> Contrato</a></li>
+                    <li><a href="Contacts"><i class="fa fa-file-text text-orange"></i> Contacto</a></li>
                     <li><a href="Groups"><i class="fa fa-users text-purple"></i> Grupo</a></li>
                 </ul>
             </li>
@@ -66,7 +66,7 @@
                 <ul class="treeview-menu">
                     <li><a href="ListOperators"><i class="fa fa-list-ul text-aqua"></i> Listar Operador</a></li>
                     <li><a href="ListCompanies"><i class="fa fa-table text-green"></i> Listar Empresa</a></li>
-                    <li><a href="ListContracts"><i class="fa fa-file-text-o text-orange"></i> Listar Contrato</a></li>
+                    <li><a href="ListContacts"><i class="fa fa-file-text-o text-orange"></i> Listar Contacto</a></li>
                     <li><a href="ListGroups"><i class="fa fa-th-list text-purple"></i> Listar Grupo</a></li>
                 </ul>
             </li>

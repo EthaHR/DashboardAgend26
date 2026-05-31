@@ -24,7 +24,7 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
                 <div class="box-header with-border">
                     <h3 class="box-title">Registro de Grupo</h3>
                 </div>
-                <form method="post" role="form" style="padding: 0; width: 50%; min-width: 320px; margin: auto;">
+                <form method="post" role="form" style="padding: 0;">
                     <div class="box-body">
                         <?php
                         include __DIR__ . "/../controllers/guardar.php";
@@ -43,7 +43,11 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
                         }
                         ?>
 
-                        <div style="width: 100%; margin: auto;">
+                        <div class="grid-form">
+                            <div class="form-group">
+                                <label>ID del Grupo:</label>
+                                <input type="text" class="form-control" name="id_grupo" value="<?= isset($_POST['id_grupo']) ? htmlspecialchars($_POST['id_grupo']) : '' ?>" placeholder="Ej: GR001" required>
+                            </div>
                             <div class="form-group">
                                 <label>Nombre del Grupo:</label>
                                 <input type="text" class="form-control" name="nombre_grupo" value="<?= isset($_POST['nombre_grupo']) ? htmlspecialchars($_POST['nombre_grupo']) : '' ?>" required>
@@ -51,7 +55,7 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
                         </div>
                     </div>
 
-                    <div class="box-footer" style="width: 100%; margin: auto;">
+                    <div class="box-footer" style="width: 50%;min-width: 320px; margin: auto;">
                         <button type="submit" class="btn btn-primary" id="btnRegistrar" style="width: 100%" name="btnregistrar" value="ok">Registrar Grupo</button>
                     </div>
                 </form>

@@ -3,5 +3,5 @@
 include_once dirname(__DIR__, 2) . "/Model/Model.php";
 
 // 2. Cargamos el componente visual del listado
-include __DIR__ . "/ContractsBackend/src/view/table.php";
-?>s
+include __DIR__ . "/ContactsBackend/src/view/table.php";
+?>

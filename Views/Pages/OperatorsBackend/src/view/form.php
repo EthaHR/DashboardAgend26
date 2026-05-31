@@ -45,6 +45,10 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
 
                         <div class="grid-form">
                             <div class="form-group">
+                                <label>ID del Operador:</label>
+                                <input type="text" class="form-control" name="id_operador" value="<?= isset($_POST['id_operador']) ? htmlspecialchars($_POST['id_operador']) : '' ?>" placeholder="Ej: OP001" required>
+                            </div>
+                            <div class="form-group">
                                 <label>Nombre del Operador:</label>
                                 <input type="text" class="form-control" name="nombre_operador" value="<?= isset($_POST['nombre_operador']) ? htmlspecialchars($_POST['nombre_operador']) : '' ?>" required>
                             </div>
