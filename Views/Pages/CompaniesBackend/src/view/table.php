@@ -243,7 +243,7 @@ include __DIR__ . "/../controllers/eliminar.php";
             },
             pageLength: 10,
             lengthMenu: [10, 25, 50],
-            dom: '<"row"<"col-sm-6"l><"col-sm-6"f>>Brtip',
+            dom: '<"row"<"col-sm-6"l><"col-sm-6 pr-3 text-right"f>>Brtip',
             buttons: [{
                     extend: 'excel',
                     text: '<i class="fa-solid fa-file-excel"></i> Excel',
