@@ -1,11 +1,8 @@
-<div class="content" style="min-height: 717px;">
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Listar Empresas</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+
+    <?php
+    // 1. Cargamos primero la base de datos de manera absoluta basada en Contracts.php
+    include_once dirname(__DIR__, 2) . "/Model/Config/conexion.php";
+
+    // 2. Cargamos el componente visual del formulario
+    include __DIR__ . "/CompaniesBackend/src/view/table.php";
+    ?>
