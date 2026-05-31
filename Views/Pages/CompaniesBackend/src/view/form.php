@@ -19,7 +19,7 @@ if (!isset($conexion) && file_exists(__DIR__ . "/../model/conexion.php")) {
 <section class="content">
     <div class="row">
 
-        <div class="col-4 w-100 w-md-50" style="max-width: 950px; margin: auto;padding: 40px">
+        <div class="col-12" style="max-width: 950px; margin: auto; padding: 40px">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">Registro de Empresa</h3>
