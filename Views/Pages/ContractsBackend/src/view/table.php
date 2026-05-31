@@ -1,22 +1,8 @@
 <?php
 mysqli_report(MYSQLI_REPORT_OFF);
-/**
- * Conexión Centralizada usando la ruta exacta desde la ubicación de table.php:
- * 1. __DIR__ = Raíz/Views/Pages/ContractsBackend/src/view
- * 2. Subimos 5 niveles (../../../..//..) para aterrizar en la raíz de DashboardAgend26
- * 3. Entramos a la carpeta de configuración global global: Model/Config/conexion.php
- */
-$rutaConexionGlobal = dirname(__DIR__, 5) . "/Model/Config/conexion.php";
 
-if (file_exists($rutaConexionGlobal)) {
-    // Incluye el archivo central e inicializa la variable $conexion automáticamente
-    include $rutaConexionGlobal;
-} else {
-    die("<div class='alert alert-danger'>Error Crítico: No se encontró el archivo de conexión global en la ruta esperada.</div>");
-}
-
-if (!$conexion) {
-    die("<div class='alert alert-danger'>Error de conexión a la Base de Datos.</div>");
+if (!isset($conexion)) {
+    include_once dirname(__DIR__, 5) . "/Model/Model.php";
 }
 
 // Procesar el controlador de modificación (Sigue estando dentro de tu módulo local)
