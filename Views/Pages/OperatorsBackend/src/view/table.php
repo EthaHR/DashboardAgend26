@@ -112,7 +112,7 @@ include __DIR__ . "/../controllers/eliminar.php";
                         ?>
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <a href="index.php?Pages=Operators" class="btn btn-primary">
+                        <a href="index.php?Pages=Operator" class="btn btn-primary">
                             <i class="fa fa-plus"></i> Agregar Registro
                         </a>
                     </div>
