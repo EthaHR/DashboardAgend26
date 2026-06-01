@@ -5,32 +5,32 @@
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 1.5rem 1.75rem 0.5rem;
+    gap: 1.25rem;
+    padding: 1.75rem 2rem 0.75rem;
     background: transparent;
     border: none;
 }
 
 .content-wrapper .dash-page-header h1 {
     margin: 0;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: #0f172a;
     letter-spacing: -0.02em;
 }
 
 .content-wrapper .dash-page-header p {
-    margin: 0.35rem 0 0;
-    font-size: 0.95rem;
+    margin: 0.4rem 0 0;
+    font-size: 1.125rem;
     color: #64748b;
 }
 
 .content-wrapper .dash-total-pill {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
+    gap: 0.6rem;
+    padding: 0.65rem 1.25rem;
+    font-size: 1.05rem;
     font-weight: 600;
     color: #1e40af;
     background: #eff6ff;
@@ -38,60 +38,68 @@
     border-radius: 999px;
 }
 
+.content-wrapper .dash-total-pill i {
+    font-size: 1.1rem;
+}
+
 .content-wrapper .dash-page-content {
-    padding: 0 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 120px);
+    padding: 0 2rem 2.5rem;
 }
 
 .content-wrapper .dash-kpi-row {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .content-wrapper .dash-kpi-card {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 1.35rem;
+    gap: 1.25rem;
+    min-height: 110px;
+    padding: 1.5rem 1.6rem;
     margin-bottom: 1rem;
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.07);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .content-wrapper .dash-kpi-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
 }
 
 .content-wrapper .dash-kpi-card__icon {
     flex-shrink: 0;
-    width: 52px;
-    height: 52px;
+    width: 68px;
+    height: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
-    font-size: 1.35rem;
+    border-radius: 14px;
+    font-size: 1.85rem;
 }
 
 .content-wrapper .dash-kpi-card__value {
     display: block;
-    font-size: 1.75rem;
-    font-weight: 700;
-    line-height: 1.1;
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1;
     color: #0f172a;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
 }
 
 .content-wrapper .dash-kpi-card__label {
     display: block;
-    margin-top: 0.2rem;
-    font-size: 0.8125rem;
+    margin-top: 0.35rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #64748b;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
 }
 
 .content-wrapper .kpi-blue .dash-kpi-card__icon   { background: #dbeafe; color: #2563eb; }
@@ -100,40 +108,55 @@
 .content-wrapper .kpi-violet .dash-kpi-card__icon { background: #ede9fe; color: #7c3aed; }
 
 .content-wrapper .dash-actions-row {
-    margin-top: 0.25rem;
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    margin-top: 0;
+}
+
+.content-wrapper .dash-actions-row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper .dash-actions-row > .col-lg-7 > .dash-panel {
+    flex: 1;
 }
 
 .content-wrapper .dash-panel {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
-    padding: 1.35rem 1.5rem;
-    margin-bottom: 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    padding: 1.75rem 1.85rem;
+    margin-bottom: 1.5rem;
 }
 
 .content-wrapper .dash-panel__head h2 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.45rem;
     font-weight: 700;
     color: #0f172a;
 }
 
 .content-wrapper .dash-panel__head h2 i {
-    margin-right: 0.4rem;
+    margin-right: 0.5rem;
     color: #3b82f6;
+    font-size: 1.25rem;
 }
 
 .content-wrapper .dash-panel__head p {
-    margin: 0.35rem 0 1rem;
-    font-size: 0.875rem;
+    margin: 0.45rem 0 1.25rem;
+    font-size: 1.05rem;
     color: #94a3b8;
 }
 
 .content-wrapper .dash-quick-grid--create {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
+    flex: 1;
+    align-content: start;
 }
 
 @media (max-width: 576px) {
@@ -145,10 +168,11 @@
 .content-wrapper .dash-quick-btn {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.9rem 1rem;
+    gap: 1rem;
+    min-height: 76px;
+    padding: 1.15rem 1.35rem;
     text-decoration: none !important;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #e2e8f0;
     background: #f8fafc;
     transition: background 0.2s, border-color 0.2s, transform 0.15s;
@@ -156,32 +180,32 @@
 
 .content-wrapper .dash-quick-btn:hover,
 .content-wrapper .dash-quick-btn:focus {
-    transform: translateX(2px);
+    transform: translateX(3px);
     background: #ffffff;
     border-color: #cbd5e1;
     text-decoration: none !important;
 }
 
 .content-wrapper .dash-quick-btn__icon {
-    width: 40px;
-    height: 40px;
+    width: 52px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 1.35rem;
 }
 
 .content-wrapper .dash-quick-btn__label {
     flex: 1;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #334155 !important;
 }
 
 .content-wrapper .dash-quick-btn__arrow {
     color: #94a3b8;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 
 .content-wrapper .qa-blue .dash-quick-btn__icon   { background: #dbeafe; color: #2563eb; }
@@ -192,21 +216,22 @@
 .content-wrapper .dash-quick-grid--list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .content-wrapper .dash-list-btn {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1rem;
+    gap: 1rem;
+    min-height: 58px;
+    padding: 0.95rem 1.25rem;
     text-decoration: none !important;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid #e2e8f0;
     background: #f8fafc;
     color: #475569 !important;
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 1.05rem;
     transition: background 0.2s, border-color 0.2s;
 }
 
@@ -219,8 +244,9 @@
 }
 
 .content-wrapper .dash-list-btn > i:first-child {
-    width: 1.25rem;
+    width: 1.5rem;
     text-align: center;
+    font-size: 1.15rem;
     color: #3b82f6;
 }
 
@@ -229,22 +255,27 @@
 }
 
 .content-wrapper .dash-list-btn__chevron {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     color: #cbd5e1;
 }
 
 .content-wrapper .dash-panel--summary {
     margin-bottom: 0;
+    flex: 1;
+}
+
+.content-wrapper .dash-panel--summary .dash-panel__head {
+    margin-bottom: 0.5rem;
 }
 
 .content-wrapper .dash-distribution {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0.25rem 0 0;
 }
 
 .content-wrapper .dash-distribution__item {
-    margin-bottom: 0.85rem;
+    margin-bottom: 1.15rem;
 }
 
 .content-wrapper .dash-distribution__item:last-child {
@@ -255,23 +286,29 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 0.35rem;
-    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
     color: #475569;
 }
 
+.content-wrapper .dash-distribution__meta span {
+    font-weight: 600;
+}
+
 .content-wrapper .dash-distribution__meta strong {
+    font-size: 1.1rem;
     color: #0f172a;
     font-weight: 700;
 }
 
 .content-wrapper .dash-distribution__meta small {
+    font-size: 0.95rem;
     font-weight: 500;
     color: #94a3b8;
 }
 
 .content-wrapper .dash-distribution__bar {
-    height: 6px;
+    height: 10px;
     background: #f1f5f9;
     border-radius: 999px;
     overflow: hidden;
@@ -282,4 +319,89 @@
     height: 100%;
     border-radius: 999px;
     transition: width 0.6s ease;
+}
+
+/* Fila inferior — acceso rápido por módulo */
+.content-wrapper .dash-bottom-row {
+    margin-top: auto;
+    padding-top: 1.75rem;
+}
+
+.content-wrapper .dash-mini-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 100px;
+    padding: 1.25rem 1.4rem;
+    margin-bottom: 1rem;
+    text-decoration: none !important;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.content-wrapper .dash-mini-card:hover,
+.content-wrapper .dash-mini-card:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.09);
+    border-color: #cbd5e1;
+    text-decoration: none !important;
+}
+
+.content-wrapper .dash-mini-card__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.5rem;
+}
+
+.content-wrapper .dash-mini-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.content-wrapper .dash-mini-card__value {
+    font-size: 1.85rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #0f172a;
+}
+
+.content-wrapper .dash-mini-card__label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.content-wrapper .dash-mini-card__pct {
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+.content-wrapper .dash-mini-card__arrow {
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+.content-wrapper .dash-mini-card.kpi-blue .dash-mini-card__icon   { background: #dbeafe; color: #2563eb; }
+.content-wrapper .dash-mini-card.kpi-green .dash-mini-card__icon  { background: #d1fae5; color: #059669; }
+.content-wrapper .dash-mini-card.kpi-amber .dash-mini-card__icon  { background: #fef3c7; color: #d97706; }
+.content-wrapper .dash-mini-card.kpi-violet .dash-mini-card__icon { background: #ede9fe; color: #7c3aed; }
+
+@media (max-width: 991px) {
+    .content-wrapper .dash-page-content {
+        min-height: auto;
+    }
+
+    .content-wrapper .dash-actions-row {
+        flex: none;
+    }
 }

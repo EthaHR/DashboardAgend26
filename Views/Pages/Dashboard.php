@@ -142,4 +142,30 @@ $quickLists = [
             </div>
         </div>
     </div>
+
+    <div class="row dash-bottom-row">
+        <?php
+        $bottomModules = [
+            ['key' => 'operadores', 'label' => 'Operadores', 'href' => 'ListOperators', 'icon' => 'fa-user', 'tone' => 'kpi-blue'],
+            ['key' => 'empresas',   'label' => 'Empresas',   'href' => 'ListCompanies', 'icon' => 'fa-building', 'tone' => 'kpi-green'],
+            ['key' => 'contactos',  'label' => 'Contactos',  'href' => 'ListContacts',  'icon' => 'fa-book', 'tone' => 'kpi-amber'],
+            ['key' => 'grupos',     'label' => 'Grupos',     'href' => 'ListGroups',    'icon' => 'fa-users', 'tone' => 'kpi-violet'],
+        ];
+        foreach ($bottomModules as $module):
+            $count = $stats[$module['key']];
+            $pct = $stats['total'] > 0 ? round(($count / $stats['total']) * 100) : 0;
+        ?>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <a href="<?= htmlspecialchars($module['href']) ?>" class="dash-mini-card <?= htmlspecialchars($module['tone']) ?>">
+                    <span class="dash-mini-card__icon"><i class="fa <?= htmlspecialchars($module['icon']) ?>"></i></span>
+                    <span class="dash-mini-card__body">
+                        <span class="dash-mini-card__value"><?= number_format($count) ?></span>
+                        <span class="dash-mini-card__label"><?= htmlspecialchars($module['label']) ?></span>
+                        <span class="dash-mini-card__pct"><?= $pct ?>% del total</span>
+                    </span>
+                    <i class="fa fa-chevron-right dash-mini-card__arrow"></i>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </section>
