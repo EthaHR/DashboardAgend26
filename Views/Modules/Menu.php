@@ -37,6 +37,13 @@
         </div>
 
         <ul class="sidebar-menu" data-widget="tree">
+            <li>
+                <a href="Dashboard">
+                    <i class="fa fa-dashboard text-blue"></i>
+                    <span>Inicio</span>
+                </a>
+            </li>
+
             <!-- SECCIÓN REGISTROS -->
             <li class="treeview">
                 <a href="#">
@@ -84,7 +91,7 @@ $(document).ready(function () {
 
     // 2. Tu lógica existente para marcar la página activa actual
     var exactUrl = window.location.href;
-    $('.treeview-menu li a').filter(function () {
+    $('.sidebar-menu > li > a, .treeview-menu li a').filter(function () {
         return this.href === exactUrl || exactUrl.endsWith('/' + $(this).attr('href'));
     }).each(function() {
         $(this).parent().addClass('active');

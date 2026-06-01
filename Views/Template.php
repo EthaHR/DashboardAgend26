@@ -1,10 +1,32 @@
+<?php
+$allowedPages = [
+  "Dashboard",
+  "Operator",
+  "Companies",
+  "Contacts",
+  "Groups",
+  "ListOperators",
+  "ListCompanies",
+  "ListContacts",
+  "ListGroups",
+];
+
+$currentPage = $_GET["Pages"] ?? "Dashboard";
+
+$appBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/index.php')), '/');
+$appBase = ($appBase === '' ? '' : $appBase) . '/';
+
+$asset = static function (string $path) use ($appBase): string {
+  return $appBase . ltrim($path, '/');
+};
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Gestión de Inventarios</title>
+  <title>Agenda 2026 — Panel de control</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
@@ -26,9 +48,11 @@
   <link href="https://cdn.datatables.net/responsive/3.0.3/css/responsive.bootstrap.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/buttons/3.2.0/css/buttons.bootstrap.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
-
+  <?php if ($currentPage === 'Dashboard'): ?>
+  <link rel="stylesheet" href="<?= htmlspecialchars($asset('Views/Pages/DashboardBackend/src/styles/dashboard.css')) ?>">
+  <?php endif; ?>
 
 </head>
 
@@ -40,19 +64,8 @@
 
     <div class="content-wrapper">
       <?php
-      if (isset($_GET["Pages"])) {
-        if (
-          $_GET["Pages"] == "Operator" ||
-          $_GET["Pages"] == "Companies" ||
-          $_GET["Pages"] == "Contacts" ||
-          $_GET["Pages"] == "Groups" ||
-          $_GET["Pages"] == "ListOperators" ||
-          $_GET["Pages"] == "ListCompanies" ||
-          $_GET["Pages"] == "ListContacts" ||
-          $_GET["Pages"] == "ListGroups"
-        ) {
-          include "Pages/" . $_GET["Pages"] . ".php";
-        }
+      if (in_array($currentPage, $allowedPages, true)) {
+        include "Pages/" . $currentPage . ".php";
       }
       ?>
     </div>
