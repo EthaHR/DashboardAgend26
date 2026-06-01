@@ -248,7 +248,8 @@ include __DIR__ . "/../controllers/eliminar.php";
                 {
                     extend: 'print',
                     text: '<i class="fa-solid fa-print"></i> Imprimir',
-                    className: 'btn btn-dark btn-sm'
+                    className: 'btn btn-dark btn-sm',
+                    customize: dtPrintCustomize
                 }
             ]
         });

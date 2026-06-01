@@ -1,0 +1,94 @@
+/* Print-friendly styles for DataTables and browser printing */
+
+@media print {
+    /* Hide UI chrome */
+    .main-sidebar,
+    .main-header,
+    .main-footer,
+    .content-header,
+    .box-header,
+    .box-footer,
+    .dt-buttons,
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_paginate,
+    .btn,
+    .no-print {
+        display: none !important;
+    }
+
+    /* Reset layout */
+    .wrapper {
+        overflow: visible !important;
+        height: auto !important;
+    }
+
+    .content-wrapper {
+        margin-left: 0 !important;
+        padding-top: 0 !important;
+        min-height: auto !important;
+        background: #fff !important;
+    }
+
+    .content {
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: auto !important;
+    }
+
+    .box {
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+
+    .box-body {
+        padding: 0 !important;
+    }
+
+    /* Strip DataTables wrapper styles */
+    .dataTables_wrapper {
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    /* Printed table */
+    .table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 9pt !important;
+    }
+
+    .table th {
+        background-color: #1e3a5f !important;
+        color: #ffffff !important;
+        font-weight: 600;
+        padding: 6pt 7pt !important;
+        border: 1px solid #cbd5e1 !important;
+        text-align: left;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .table td {
+        padding: 5pt 7pt !important;
+        border: 1px solid #cbd5e1 !important;
+        vertical-align: top;
+    }
+
+    .table tr:nth-child(even) td {
+        background-color: #f8fafc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .alert,
+    #session-messages {
+        display: none !important;
+    }
+
+    a[href]:after {
+        content: none !important;
+    }
+}

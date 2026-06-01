@@ -53,6 +53,7 @@ $asset = static function (string $path) use ($appBase): string {
   <?php if ($currentPage === 'Dashboard'): ?>
   <link rel="stylesheet" href="<?= htmlspecialchars($asset('Views/Pages/DashboardBackend/src/styles/dashboard.css')) ?>">
   <?php endif; ?>
+  <link rel="stylesheet" href="<?= htmlspecialchars($asset('Views/Resources/dist/css/print.css')) ?>" media="print">
 
 </head>
 
@@ -110,6 +111,7 @@ $asset = static function (string $path) use ($appBase): string {
 
   <script src="Views/Resources/dist/js/pages/dashboard.js"></script>
   <script src="Views/Resources/dist/js/demo.js"></script>
+  <script src="Views/Resources/dist/js/pages/datatables-print.js"></script>
 
 
 
