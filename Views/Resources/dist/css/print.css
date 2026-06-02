@@ -1,93 +1,151 @@
-/* Print-friendly styles for DataTables and browser printing */
+/* Compact print styles for DataTables (max rows per page) */
+/* Higher-specificity selectors win against page CSS loaded in <body> */
+
+@page {
+    margin: 0.2in;
+}
 
 @media print {
-    /* Hide UI chrome */
-    .main-sidebar,
-    .main-header,
-    .main-footer,
+    body {
+        background: #fff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 6pt !important;
+    }
+
+    /* ─── Hide all chrome ─── */
+    .main-sidebar, .main-header, .main-footer,
     .content-header,
-    .box-header,
-    .box-footer,
-    .dt-buttons,
-    .dataTables_length,
-    .dataTables_filter,
-    .dataTables_info,
-    .dataTables_paginate,
-    .btn,
-    .no-print {
+    .box-header, .box-footer, .box-title,
+    .dt-buttons, .dataTables_length, .dataTables_filter,
+    .dataTables_info, .dataTables_paginate,
+    .btn, .no-print, .alert, #session-messages,
+    .dash-page-header, .dash-total-pill, .dash-kpi-row,
+    .dash-kpi-card, .dash-actions-row, .dash-panel,
+    .dash-quick-btn, .dash-list-btn, .dash-mini-card,
+    .dash-bottom-row,
+    div[style*="margin-bottom"] {
         display: none !important;
     }
 
-    /* Reset layout */
+    /* ─── Squash layout containers ─── */
     .wrapper {
         overflow: visible !important;
         height: auto !important;
     }
-
     .content-wrapper {
-        margin-left: 0 !important;
-        padding-top: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
         min-height: auto !important;
         background: #fff !important;
     }
-
+    section.content,
     .content {
         padding: 0 !important;
         margin: 0 !important;
         min-height: auto !important;
     }
-
+    .row {
+        margin: 0 !important;
+    }
+    .row > [class*="col-"] {
+        padding: 0 !important;
+        float: none !important;
+        width: 100% !important;
+    }
     .box {
         border: none !important;
         box-shadow: none !important;
         margin: 0 !important;
     }
-
     .box-body {
         padding: 0 !important;
     }
 
-    /* Strip DataTables wrapper styles */
+    /* ─── Strip DataTables wrapper ─── */
     .dataTables_wrapper {
         padding: 0 !important;
         border: none !important;
+        margin: 0 !important;
+    }
+    .dataTables_wrapper div[id] {
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
-    /* Printed table */
-    .table {
+    /* ─── Table ─── */
+    html body .table,
+    html body table.dataTable {
         width: 100% !important;
         border-collapse: collapse !important;
-        font-size: 9pt !important;
+        border-spacing: 0 !important;
+        margin: 0 !important;
+        font-size: 6pt !important;
+        table-layout: fixed;
     }
 
-    .table th {
-        background-color: #1e3a5f !important;
-        color: #ffffff !important;
+    html body .table th,
+    html body table.dataTable thead th {
+        background: #1e3a5f !important;
+        color: #fff !important;
         font-weight: 600;
-        padding: 6pt 7pt !important;
-        border: 1px solid #cbd5e1 !important;
+        font-size: 6pt !important;
+        padding: 1pt 2pt !important;      /* antes: 2pt 3pt */
+        border: 0.5pt solid #cbd5e1 !important;
         text-align: left;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+        line-height: 1.05 !important;     /* antes: 1.1 */
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
-    .table td {
-        padding: 5pt 7pt !important;
-        border: 1px solid #cbd5e1 !important;
+    html body .table td,
+    html body table.dataTable tbody td {
+        padding: 0.5pt 2pt !important;    /* antes: 1pt 3pt */
+        border: 0.5pt solid #cbd5e1 !important;
         vertical-align: top;
+        font-size: 6pt !important;
+        line-height: 1.1 !important;      /* antes: 1.15 */
+        white-space: nowrap;
     }
 
-    .table tr:nth-child(even) td {
-        background-color: #f8fafc !important;
+    /* ─── Alternating rows ─── */
+    html body .table tr:nth-child(even) td,
+    html body table.dataTable tbody tr:nth-child(even) td {
+        background: #f8fafc !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
-    .alert,
-    #session-messages {
-        display: none !important;
+    /* ─── Kill hover transforms ─── */
+    html body table.dataTable tbody tr:hover {
+        transform: none !important;
+        background: transparent !important;
     }
 
+    /* ─── Status badges ─── */
+    .estado, .label, .badge {
+        font-size: 5.5pt !important;
+        padding: 0pt 1.5pt !important;    /* antes: 0.5pt 2pt */
+        line-height: 1.0 !important;      /* antes: 1.1 */
+    }
+
+    /* ─── Action buttons ─── */
+    html body .table .btn-sm,
+    html body .btn-editar,
+    html body .btn-eliminar {
+        padding: 0pt 1.5pt !important;    /* antes: 0.5pt 2pt */
+        font-size: 5.5pt !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        width: auto !important;
+        height: auto !important;
+        border: none !important;
+        background: transparent !important;
+    }
+
+    /* ─── Misc ─── */
     a[href]:after {
         content: none !important;
     }

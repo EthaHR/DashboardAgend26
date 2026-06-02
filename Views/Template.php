@@ -60,9 +60,13 @@ $asset = static function (string $path) use ($appBase): string {
 <body class="hold-transition skin-blue sidebar-mini">
   <div class="wrapper">
 
+    <!-- Header -->
     <?php include "Modules/Header.php" ?>
+    
+    <!-- Menu -->
     <?php include "Modules/Menu.php" ?>
 
+    <!-- Content Wrapper -->
     <div class="content-wrapper">
       <?php
       if (in_array($currentPage, $allowedPages, true)) {
@@ -111,7 +115,8 @@ $asset = static function (string $path) use ($appBase): string {
 
   <script src="Views/Resources/dist/js/pages/dashboard.js"></script>
   <script src="Views/Resources/dist/js/demo.js"></script>
-  <script src="Views/Resources/dist/js/pages/datatables-print.js"></script>
+  <script src="Views/Resources/dist/js/pages/datatables-print.js?v=<?= time() ?>"></script>
+
 
 
 
