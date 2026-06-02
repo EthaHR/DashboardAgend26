@@ -36,7 +36,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: #1e40af;
     background: #eff6ff;
@@ -101,7 +101,7 @@
 .content-wrapper .dash-kpi-card__label {
     display: block;
     margin-top: 0.25rem;
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #64748b;
     text-transform: uppercase;
@@ -139,7 +139,7 @@
 
 .content-wrapper .dash-panel__head h2 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: #0f172a;
 }
@@ -147,7 +147,7 @@
 .content-wrapper .dash-panel__head h2 i {
     margin-right: 0.4rem;
     color: #3b82f6;
-    font-size: 1.1rem;
+    font-size: 2.1rem;
 }
 
 .content-wrapper .dash-panel__head p {
@@ -203,7 +203,7 @@
 
 .content-wrapper .dash-quick-btn__label {
     flex: 1;
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #334155 !important;
 }
@@ -236,7 +236,7 @@
     background: #f8fafc;
     color: #475569 !important;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     transition: background 0.2s, border-color 0.2s;
 }
 
@@ -297,17 +297,18 @@
 }
 
 .content-wrapper .dash-distribution__meta span {
+    font-size: 11px;
     font-weight: 600;
 }
 
 .content-wrapper .dash-distribution__meta strong {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     color: #0f172a;
     font-weight: 700;
 }
 
 .content-wrapper .dash-distribution__meta small {
-    font-size: 0.85rem;
+    font-size: 1.25rem;
     font-weight: 500;
     color: #94a3b8;
 }
@@ -374,19 +375,24 @@
 
 .content-wrapper .dash-mini-card__value {
     font-size: 1.5rem;
+    text-align: center;
     font-weight: 800;
     line-height: 1;
-    color: #0f172a;
+    color: #1e40af;
+    background-color: #eff6ff;
+    border-radius: 10px;
+    border: 1px solid #bfdbfe;
+    margin: 0 25%;
 }
 
 .content-wrapper .dash-mini-card__label {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: #475569;
 }
 
 .content-wrapper .dash-mini-card__pct {
-    font-size: 0.85rem;
+    font-size: 1.10rem;
     color: #94a3b8;
 }
 
